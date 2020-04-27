@@ -1,0 +1,17 @@
+.headingText {
+  margin-top: 90%;
+  line-height: 200%;
+}
+
+.headingPrimaryText {
+  color: white;
+  font-size: 50px;
+  font-family: "Archivo Black", sans-serif;
+}
+
+.headingSecondaryText {
+  color: lightgray;
+  font-size: 20px;
+  margin-left: 10px;
+  letter-spacing: 10px;
+}

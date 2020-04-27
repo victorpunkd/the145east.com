@@ -1,0 +1,11 @@
+.header {
+  float: right;
+  /* color: white; */
+  padding: 0% 3%;
+}
+
+.headerIcon {
+  font-size: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+}

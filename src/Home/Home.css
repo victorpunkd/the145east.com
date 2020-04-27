@@ -1,0 +1,45 @@
+.apparel {
+  width: 100vw;
+  padding: 2% 0%;
+  height: 80vh;
+}
+
+.apparelHeading {
+  float: left;
+  color: white;
+  font-family: "Varela", sans-serif;
+  margin-top: 0%;
+  padding: 0% 3%;
+}
+
+.sideBar {
+  width: 40vw;
+  margin-top: 20%;
+  text-align: left;
+}
+
+.sideBarHeading {
+  border-bottom: 1px solid black;
+  padding: 5% 1%;
+}
+
+.apparelSex {
+  font-size: 10px;
+  color: white;
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
+.apparelSexOption {
+  margin-left: 5%;
+}
+
+.apparelSex .active {
+  color: black;
+  font-weight: bold;
+}
+
+.productCardsContainer {
+  max-height: 70.5vh; /*74 is ideal or  71.5*/
+  overflow: scroll;
+}
