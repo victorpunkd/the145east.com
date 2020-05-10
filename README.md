@@ -22,9 +22,7 @@ The website is hosted on Amazon Web Services, services used ->
 
 ## Screenshots
 
-![image](https://s3.ap-south-1.amazonaws.com/145east.com-files/images/static/screenShot_1.png)
-
-<div><span><img style="width:25%;height:40%" src="https://s3.ap-south-1.amazonaws.com/145east.com-files/images/static/screenShot_1.png"/></span></div>
+<div><span><img style="width:100px;height:200px" src="https://s3.ap-south-1.amazonaws.com/145east.com-files/images/static/screenShot_1.png"/></span></div>
 
 ## How to run the project
 
