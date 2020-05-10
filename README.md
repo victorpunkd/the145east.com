@@ -1,4 +1,4 @@
-## the145east.com
+## The145East.com
 
 #### About the business - 
 
@@ -10,7 +10,7 @@ More importantly, we're a fun circus and our work is serious fun."
 
 ## More about the project
 
-This project is developed with React JS, with Node JS as the backend technology and SQL Server as the database, you can check the live version of the website here - [the145east.com](https://the145east.com).
+This project is developed with React JS, with Node JS as the backend technology and SQL Server as the database, you can check the live version of the website here - [The145East.com](https://the145east.com).
 
 The website is hosted on Amazon Web Services, services used ->
 
