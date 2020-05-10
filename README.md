@@ -1,6 +1,6 @@
 ## the145east.com
 
-####About the business - 
+#### About the business - 
 
 "145 East is a design collective based in Calcutta, India. We're a troupe of passionate visual bandits--outlaws of design who want to bring the local aesthetic of Calcutta to everyday products. From apparel to stationery to household to accessories, we keep churning out new things that are exciting to make. We're storytellers, architects, mathematics majors, graphic designers, illustrators, and we have a labrador who is our marketing head and full time stress buster. 
 
@@ -23,6 +23,8 @@ The website is hosted on Amazon Web Services, services used ->
 ## Screenshots
 
 ![image](https://s3.ap-south-1.amazonaws.com/145east.com-files/images/static/screenShot_1.png)
+
+<div><span><img style="width:25%;height:40%" src="https://s3.ap-south-1.amazonaws.com/145east.com-files/images/static/screenShot_1.png"/></span></div>
 
 ## How to run the project
 
