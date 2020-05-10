@@ -1,3 +1,37 @@
+## the145east.com
+
+####About the business - 
+
+"145 East is a design collective based in Calcutta, India. We're a troupe of passionate visual bandits--outlaws of design who want to bring the local aesthetic of Calcutta to everyday products. From apparel to stationery to household to accessories, we keep churning out new things that are exciting to make. We're storytellers, architects, mathematics majors, graphic designers, illustrators, and we have a labrador who is our marketing head and full time stress buster. 
+
+All of our products are handcrafted, organic, and sustainable using a local fabric called gamcha. Our accessories are upcycled using gamcha scraps. We believe in eco-friendly and slow fashion. With this, our work empowers local artisans and weavers of Bengal. 
+
+More importantly, we're a fun circus and our work is serious fun."
+
+## More about the project
+
+This project is developed with React JS, with Node JS as the backend technology and SQL Server as the database, you can check the live version of the website here - [the145east.com](https://the145east.com).
+
+The website is hosted on Amazon Web Services, services used ->
+
+#### S3 to deploye react built code.
+
+#### CloudFront Distributions to deliver fast content service that securely delivers data.
+
+#### Route 53 to maintain the DNS
+
+## Screenshots
+
+![image](https://s3.ap-south-1.amazonaws.com/145east.com-files/images/static/screenShot_1.png)
+
+## How to run the project
+
+1. You need to install node npm globally in your local machine.
+2. Then you can pull this repo to your local machine or you can download the code in your local machine.
+3. Once done open cmd or terminal and navigate to the project folder.
+4. Then run `npm run` it will download all the dependencies mentioned in the package.json file to the current folder.
+5. Once the installation is complete run `npm start` to run the project locally.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
