@@ -15,7 +15,7 @@ export class Home extends Component {
       collectionSex: 0,
       body: "",
       clickedCollectionId: 0,
-      clickedCollectionName: ""
+      clickedCollectionName: "",
     };
   }
 
@@ -23,12 +23,12 @@ export class Home extends Component {
     this.setState({ sideBarShow: !this.state.sideBarShow });
   };
 
-  handleSexClick = sex => {
+  handleSexClick = (sex) => {
     this.setState({
       collectionSex: sex,
       clickedCollectionId: 0,
       body: "ProductsUnderCollection",
-      sideBarShow: false
+      sideBarShow: false,
     });
     this.props.sexUnderHomeClicked(sex);
   };
@@ -41,9 +41,9 @@ export class Home extends Component {
         clickedCollectionName: collectionName,
         collectionSex: 4,
         body: "ProductsUnderCollection",
-        sideBarShow: false
+        sideBarShow: false,
       },
-      function() {
+      function () {
         this.props.sexUnderHomeClicked(this.state.collectionSex);
       }
     );
@@ -61,7 +61,11 @@ export class Home extends Component {
           className="apparelHeading"
           style={{ color: this.state.collectionSex !== 0 ? "black" : "white" }}
         >
-          <i onClick={this.barsClicked} className="fa fa-bars" />
+          <i
+            onClick={this.barsClicked}
+            className="fa fa-bars"
+            style={{ cursor: "pointer" }}
+          />
           {/*<span> {this.state.headerText}</span>*/}
         </div>
         {this.state.sideBarShow === true && (
@@ -92,6 +96,14 @@ export class Home extends Component {
             }`}
           >
             MEN
+          </span>
+          <span
+            onClick={() => this.handleSexClick(55)}
+            className={`apparelSexOption ${
+              this.state.collectionSex === 55 ? "active" : ""
+            }`}
+          >
+            MASKS
           </span>
           <span
             onClick={() => this.handleSexClick(3)}

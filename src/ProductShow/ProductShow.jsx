@@ -38,7 +38,10 @@ export class ProductShow extends Component {
             isLoaded: true,
             data: data,
             productCurrentPicture: data[0].product_picture,
-            size: data[0].product_sex === 5 ? "L" : "",
+            size:
+              data[0].product_sex === 5 || data[0].product_sex === 55
+                ? "L"
+                : "",
           });
           this.fetchTotalLove();
         },
@@ -419,10 +422,14 @@ export class ProductShow extends Component {
                     ADD
                   </button>
                   <select
-                    disabled={data[0].product_sex === 5 ? true : false}
+                    disabled={
+                      data[0].product_sex === 5 || data[0].product_sex === 55
+                        ? true
+                        : false
+                    }
                     className={`w3-select w3-tiny w3-border w3-white ${
                       this.state.size === "" ? "w3-border-red" : ""
-                    }`}
+                    }${data[0].product_sex === 55 ? "w3-hide" : ""}`}
                     name="option"
                     value={this.state.size}
                     onChange={this.handleSelectChange}

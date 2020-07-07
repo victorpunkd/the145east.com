@@ -14,7 +14,7 @@ export class Cart extends Component {
       sizeSelectionShow: false,
       sizesToPass: [],
       isMinusOperation: false,
-      productId: ""
+      productId: "",
     };
   }
 
@@ -61,18 +61,18 @@ export class Cart extends Component {
 
   componentDidMount() {
     fetch(`${getApiEndpoint()}/api/getProductArray/${this.props.cartData}`)
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(
-        data => {
+        (data) => {
           this.setState({
             isLoaded: true,
-            data: data
+            data: data,
           });
         },
-        error => {
+        (error) => {
           this.setState({
             isLoaded: true,
-            error
+            error,
           });
         }
       );
@@ -83,7 +83,7 @@ export class Cart extends Component {
       sizeSelectionShow: true,
       sizesToPass: [...size],
       isMinusOperation: true,
-      productId: product_id
+      productId: product_id,
     });
     //this.props.minusButtonClicked(product_id);
   };
@@ -92,14 +92,16 @@ export class Cart extends Component {
     this.setState({
       sizeSelectionShow: true,
       sizesToPass:
-        product_sex === 5 ? ["L"] : ["S", "M", "L", "XL", "XXL", "XXXL"],
+        product_sex === 5 || product_sex === 55
+          ? ["L"]
+          : ["S", "M", "L", "XL", "XXL", "XXXL"],
       isMinusOperation: false,
-      productId: product_id
+      productId: product_id,
     });
     //this.props.plusButtonClicked(product_id);
   };
 
-  handleRemoveButtonClick = product_id => {
+  handleRemoveButtonClick = (product_id) => {
     this.props.removeButtonClicked(product_id);
   };
 
@@ -142,7 +144,7 @@ export class Cart extends Component {
             </div>
           </div>
           <div style={{ width: "100%", maxHeight: "40vh", overflow: "scroll" }}>
-            {data.map(data => (
+            {data.map((data) => (
               <ProductCardForCart
                 key={data.product_id}
                 product_id={data.product_id}

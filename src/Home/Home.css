@@ -32,6 +32,7 @@
 
 .apparelSexOption {
   margin-left: 5%;
+  cursor: pointer;
 }
 
 .apparelSex .active {

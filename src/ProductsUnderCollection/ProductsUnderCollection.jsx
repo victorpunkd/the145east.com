@@ -12,11 +12,11 @@ export class ProductsUnderCollection extends Component {
       isLoaded: false,
       data: [],
       dataTemp: [],
-      showScroll: false
+      showScroll: false,
     };
   }
 
-  componentDidUpdate = prevProps => {
+  componentDidUpdate = (prevProps) => {
     if (
       prevProps.productSex !== this.props.productSex &&
       this.props.productSex !== 4
@@ -49,25 +49,25 @@ export class ProductsUnderCollection extends Component {
         this.props.collectionId
       }`
     )
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(
-        dataFromFetch => {
+        (dataFromFetch) => {
           if (dataFromFetch.length > 0) {
             this.setState({
               isLoaded: true,
-              data: dataFromFetch
+              data: dataFromFetch,
             });
           } else {
             this.setState({
               isLoaded: true,
-              data: dataFromFetch
+              data: dataFromFetch,
             });
           }
         },
-        error => {
+        (error) => {
           this.setState({
             isLoaded: true,
-            error
+            error,
           });
         }
       );
@@ -75,25 +75,25 @@ export class ProductsUnderCollection extends Component {
 
   fetchData() {
     fetch(`${getApiEndpoint()}/api/product/${this.props.productSex}`)
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(
-        dataFromFetch => {
+        (dataFromFetch) => {
           if (dataFromFetch.length > 0) {
             this.setState({
               isLoaded: true,
-              data: dataFromFetch
+              data: dataFromFetch,
             });
           } else {
             this.setState({
               isLoaded: true,
-              data: dataFromFetch
+              data: dataFromFetch,
             });
           }
         },
-        error => {
+        (error) => {
           this.setState({
             isLoaded: true,
-            error
+            error,
           });
         }
       );
@@ -146,7 +146,7 @@ export class ProductsUnderCollection extends Component {
               bottom: 10,
               textAlign: "center",
               width: "100%",
-              color: "white"
+              color: "white",
             }}
           >
             <div>

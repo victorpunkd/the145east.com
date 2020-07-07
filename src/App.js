@@ -21,7 +21,7 @@ import OrderTrackDetails from "./OrderTrackDetails/OrderTrackDetails";
 import Modal from "./Modal/Modal";
 import ForgetPassword from "./ForgetPassword/ForgetPassword";
 import Favourites from "./Favourites/Favourites";
-import SpecialMessage from "./SpeicalMessage/SpecialMessage";
+//import SpecialMessage from "./SpeicalMessage/SpecialMessage";
 
 export class App extends Component {
   constructor() {
@@ -43,7 +43,7 @@ export class App extends Component {
       orderTrackDetails_orderId: "",
       accountOptionShow: false,
       loginForShop: false,
-      sexUnderHome: 0
+      sexUnderHome: 0,
     };
     this.tempCartDetails = [];
   }
@@ -58,7 +58,7 @@ export class App extends Component {
     this.setState({
       activeSection: "Home",
       sexUnderHome:
-        this.state.activeSection === "Home" ? this.state.sexUnderHome : 0
+        this.state.activeSection === "Home" ? this.state.sexUnderHome : 0,
     });
   };
 
@@ -78,14 +78,14 @@ export class App extends Component {
     this.setState({
       accountOptionShow: false,
       activeSection: "LoginSignup",
-      cart: []
+      cart: [],
     });
   };
 
   handleMyAccountClick = () => {
     this.setState({
       activeSection: "AccountManagement",
-      accountOptionShow: false
+      accountOptionShow: false,
     });
   };
 
@@ -129,21 +129,21 @@ export class App extends Component {
   handleManageOrdersClick = () => {
     this.setState({
       activeSection: "OrderTrack",
-      accountOptionShow: false
+      accountOptionShow: false,
     });
   };
 
   handleManageAddressClick = () => {
     this.setState({
       activeSection: "AddressManagement",
-      accountOptionShow: false
+      accountOptionShow: false,
     });
   };
 
   handleFavouritesClick = () => {
     this.setState({
       activeSection: "Favourites",
-      accountOptionShow: false
+      accountOptionShow: false,
     });
   };
 
@@ -164,10 +164,10 @@ export class App extends Component {
     this.handleLogoClick();
   };
 
-  handleProductClick = productId => {
+  handleProductClick = (productId) => {
     this.setState({
       productShow: true,
-      productShowId: productId
+      productShowId: productId,
     });
   };
 
@@ -178,7 +178,7 @@ export class App extends Component {
   handleAddProductToCartClick = (product_id, size) => {
     this.setState({
       modal: true,
-      modalMessage: `${size} size item added to cart`
+      modalMessage: `${size} size item added to cart`,
     });
     this.setState({ cart: [product_id, ...this.state.cart] });
     let tempCartDetails = [...this.state.cartWithSize];
@@ -186,7 +186,7 @@ export class App extends Component {
     this.setState({ cartWithSize: tempCartDetails });
   };
 
-  handleSexUnderHomeClick = sex => {
+  handleSexUnderHomeClick = (sex) => {
     this.setState({ sexUnderHome: sex });
   };
 
@@ -199,7 +199,7 @@ export class App extends Component {
       this.handleLogoClick();
     } else
       this.setState({
-        activeSection: this.state.lastActiveSection
+        activeSection: this.state.lastActiveSection,
       });
   };
 
@@ -209,17 +209,17 @@ export class App extends Component {
       if (totalAmount > 0)
         this.setState({
           activeSection: "PlaceOrder",
-          cartProductDetails: data
+          cartProductDetails: data,
         });
       else
         this.setState({
           modal: true,
-          modalMessage: "Total value of the cart is 0"
+          modalMessage: "Total value of the cart is 0",
         });
     } else {
       this.setState({
         modal: true,
-        modalMessage: "Please Log In or Sign Up to continue"
+        modalMessage: "Please Log In or Sign Up to continue",
       });
       this.setState({ activeSection: "LoginSignup" });
       this.setState({ loginForShop: true });
@@ -253,7 +253,7 @@ export class App extends Component {
     this.setState({ cartWithSize: copyOfCartDetails });
   };
 
-  handleRemoveButtonClicked = product_id => {
+  handleRemoveButtonClicked = (product_id) => {
     let copyOfCart = [...this.state.cart];
     for (let i = 0; i < copyOfCart.length; i++) {
       if (copyOfCart[i] === product_id) {
@@ -278,7 +278,7 @@ export class App extends Component {
     this.setState({
       activeSection: "OrderConfirm",
       deliveryAddress: defaultAddress,
-      paymentOption: paymentOption
+      paymentOption: paymentOption,
     });
   };
 
@@ -294,10 +294,10 @@ export class App extends Component {
     this.setState({ activeSection: "OrderTrack" });
   };
 
-  handleOrderDetailsClick = orderID => {
+  handleOrderDetailsClick = (orderID) => {
     this.setState({
       activeSection: "OrderTrackDetails",
-      orderTrackDetails_orderId: orderID
+      orderTrackDetails_orderId: orderID,
     });
   };
 
@@ -318,7 +318,7 @@ export class App extends Component {
             this.state.activeSection === "Home" && this.state.sexUnderHome === 0
               ? "url('https://s3.ap-south-1.amazonaws.com/145east.com-files/images/static/home.jpg')"
               : ""
-          }`
+          }`,
         }}
       >
         {this.state.productShow && (
@@ -335,7 +335,7 @@ export class App extends Component {
             message={this.state.modalMessage}
           />
         )}
-        {this.state.activeSection !== "PlaceOrder" && (
+        {/*this.state.activeSection !== "PlaceOrder" && (
           <SpecialMessage
             color={
               this.state.activeSection === "Home" &&
@@ -344,7 +344,7 @@ export class App extends Component {
                 : "black"
             }
           />
-        )}
+          )*/}
         <Header
           color={
             this.state.activeSection === "Home" && this.state.sexUnderHome === 0
@@ -367,12 +367,14 @@ export class App extends Component {
         )}
 
         <div className="body">
-          {/*this.state.activeSection !== "Home" &&*/
-          (this.state.activeSection === "Home"
-            ? this.state.sexUnderHome !== 0
-              ? true
-              : false
-            : true) && <Logo logoClicked={this.handleLogoClick} />}
+          {
+            /*this.state.activeSection !== "Home" &&*/
+            (this.state.activeSection === "Home"
+              ? this.state.sexUnderHome !== 0
+                ? true
+                : false
+              : true) && <Logo logoClicked={this.handleLogoClick} />
+          }
 
           {this.state.activeSection === "Loader" && <Loader />}
           {this.state.activeSection === "AboutUs" && (

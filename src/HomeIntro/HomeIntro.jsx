@@ -5,7 +5,7 @@ export class HomeIntro extends Component {
   render() {
     return (
       <div className="headingText">
-        <div>
+        <div style={{ visibility: "hidden" }}>
           <img
             src="https://s3.ap-south-1.amazonaws.com/145east.com-files/images/static/logo_png.png"
             alt="145east logo"
