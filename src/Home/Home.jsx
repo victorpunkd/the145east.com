@@ -81,7 +81,7 @@ export class Home extends Component {
           style={{ color: this.state.collectionSex !== 0 ? "black" : "white" }}
         >
           <span
-            onClick={() => this.handleSexClick(1)}
+            //onClick={() => this.handleSexClick(1)}
             className={`apparelSexOption ${
               this.state.collectionSex === 1 ? "active" : ""
             }`}
@@ -90,7 +90,7 @@ export class Home extends Component {
             WOMEN
           </span>
           <span
-            onClick={() => this.handleSexClick(2)}
+            // onClick={() => this.handleSexClick(2)}
             className={`apparelSexOption ${
               this.state.collectionSex === 2 ? "active" : ""
             }`}
@@ -102,11 +102,12 @@ export class Home extends Component {
             className={`apparelSexOption ${
               this.state.collectionSex === 55 ? "active" : ""
             }`}
+            style={{ fontFamily: "Franchise", fontSize: 20 }}
           >
             MASKS
           </span>
           <span
-            onClick={() => this.handleSexClick(3)}
+            //onClick={() => this.handleSexClick(3)}
             className={`apparelSexOption ${
               this.state.collectionSex === 3 ? "active" : ""
             }`}

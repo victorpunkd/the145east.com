@@ -7,7 +7,7 @@ export class SideBar extends Component {
   constructor() {
     super();
     this.state = {
-      activeGenderSection: "Women",
+      activeGenderSection: "Mask",
       data: [],
       isLoaded: false,
       women: [],
@@ -21,6 +21,11 @@ export class SideBar extends Component {
   }
   handleWomenClick = () => {
     this.setState({ activeGenderSection: "Women" });
+  };
+
+  handleMaskClick = () => {
+    this.setState({ activeGenderSection: "Mask" });
+    this.props.collectionClicked("505", "Mask");
   };
 
   handleMenClick = () => {
@@ -106,7 +111,38 @@ export class SideBar extends Component {
           <div className="sideBarHeading">Collection</div>
           <div className="section">
             <div
-              onClick={this.handleWomenClick}
+              onClick={this.handleMaskClick}
+              className={`sectionHeading ${
+                this.state.activeGenderSection === "Mask" ? "active" : ""
+              }`}
+              style={{ fontFamily: "Franchise", fontSize: 20 }}
+            >
+              Mask
+            </div>
+            {/*<div
+              className={`sectionItems w3-animate-left ${
+                this.state.activeGenderSection === "Women" ? "" : "w3-hide"
+                }`}
+            >
+              {women.map((collections) => (
+                <div
+                  className="itemInCollection"
+                  key={collections.collection_id}
+                  onClick={() => {
+                    this.props.collectionClicked(
+                      collections.collection_id,
+                      collections.collection_name
+                    );
+                  }}
+                >
+                  {collections.collection_name}
+                </div>
+              ))}
+                </div>*/}
+          </div>
+          <div className="section">
+            <div
+              //onClick={this.handleWomenClick}
               className={`sectionHeading ${
                 this.state.activeGenderSection === "Women" ? "active" : ""
               }`}
@@ -136,7 +172,7 @@ export class SideBar extends Component {
           </div>
           <div className="section">
             <div
-              onClick={this.handleMenClick}
+              //onClick={this.handleMenClick}
               className={`sectionHeading ${
                 this.state.activeGenderSection === "Men" ? "active" : ""
               }`}
@@ -166,7 +202,7 @@ export class SideBar extends Component {
           </div>
           <div className="section">
             <div
-              onClick={this.handleUnisexClick}
+              //onClick={this.handleUnisexClick}
               className={`sectionHeading ${
                 this.state.activeGenderSection === "Unisex" ? "active" : ""
               }`}
@@ -196,7 +232,7 @@ export class SideBar extends Component {
           </div>
           <div className="section">
             <div
-              onClick={this.handleClearanceClick}
+              //onClick={this.handleClearanceClick}
               className={`sectionHeading ${
                 this.state.activeGenderSection === "Clearance" ? "active" : ""
               }`}
@@ -226,7 +262,7 @@ export class SideBar extends Component {
           </div>
           <div className="section">
             <div
-              onClick={this.handleAccessoriesClick}
+              //onClick={this.handleAccessoriesClick}
               className={`sectionHeading ${
                 this.state.activeGenderSection === "Accessories" ? "active" : ""
               }`}
@@ -258,7 +294,7 @@ export class SideBar extends Component {
           </div>
           <div className="section">
             <div
-              onClick={this.handleStationaryClick}
+              //onClick={this.handleStationaryClick}
               className={`sectionHeading ${
                 this.state.activeGenderSection === "Stationary" ? "active" : ""
               }`}
@@ -288,7 +324,7 @@ export class SideBar extends Component {
           </div>
           <div className="section">
             <div
-              onClick={this.handleOnorderClick}
+              // onClick={this.handleOnorderClick}
               className={`sectionHeading ${
                 this.state.activeGenderSection === "Onorder" ? "active" : ""
               }`}

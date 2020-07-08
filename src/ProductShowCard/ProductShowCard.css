@@ -19,6 +19,11 @@
   /* font-family: "Playfair Display", serif; */
   font-family: "Comfortaa";
   font-weight: 600;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 
 .productPrice {
