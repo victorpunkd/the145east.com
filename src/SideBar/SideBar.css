@@ -23,6 +23,7 @@
 .sectionHeading {
   font-size: 13px;
   font-family: "Varela", sans-serif;
+  cursor: pointer;
 }
 
 .active {

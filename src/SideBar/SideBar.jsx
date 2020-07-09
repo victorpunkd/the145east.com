@@ -115,9 +115,9 @@ export class SideBar extends Component {
               className={`sectionHeading ${
                 this.state.activeGenderSection === "Mask" ? "active" : ""
               }`}
-              style={{ fontFamily: "Franchise", fontSize: 20 }}
+              style={{ fontFamily: "Franchise", fontSize: 25, fontWeight: 600 }}
             >
-              Mask
+              MASK
             </div>
             {/*<div
               className={`sectionItems w3-animate-left ${
