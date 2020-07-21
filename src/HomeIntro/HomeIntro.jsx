@@ -12,8 +12,8 @@ export class HomeIntro extends Component {
             style={{ width: 160, height: 59 }}
           />
         </div>
-        <div className="headingPrimaryText">GAMCHA</div>
-        <div className="headingSecondaryText">COLLECTION</div>
+        <div className="headingPrimaryText w3-hide">GAMCHA</div>
+        <div className="headingSecondaryText w3-hide">COLLECTION</div>
       </div>
     );
   }
