@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactGA from "react-ga";
 import "./App.css";
 import Logo from "./Logo/Logo";
 import Footer from "./Footer/Footer";
@@ -50,7 +51,14 @@ export class App extends Component {
 
   componentDidMount() {
     this.setState({ activeSection: "Home" }); /*by default Home */
+    this.initializeReactGA();
   }
+
+  initializeReactGA = () => {
+    ReactGA.initialize("UA-173670472-1");
+    ReactGA.pageview("/");
+    console.log("Google Analytics Activated");
+  };
 
   //Header handles start
 
