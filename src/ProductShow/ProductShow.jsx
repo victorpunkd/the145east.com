@@ -12,6 +12,7 @@ export class ProductShow extends Component {
       productPictureCounter: 0,
       productCurrentPicture: "",
       filterContainerShow: false,
+      isProductAddedMessageVisible: false,
       heartShow: false,
       productDescUp: false,
       isLoaded: false,
@@ -213,14 +214,30 @@ export class ProductShow extends Component {
     });
   };
 
+  showProductAddedMessage = () => {
+    this.setState({ isProductAddedMessageVisible: true });
+    setTimeout(() => {
+      this.setState({ isProductAddedMessageVisible: false });
+    }, 2000);
+  };
+
   handleAddClick = () => {
     if (this.state.size === "")
       this.setState({ modal: true, modalMessage: "Please select a size" });
-    else
+    else {
+      this.showProductAddedMessage();
       this.props.addProductToCartClicked(
         this.state.data[0].product_id,
         this.state.size
       );
+    }
+  };
+
+  handleBuyClick = () => {
+    this.props.buyProductClicked(
+      this.state.data[0].product_id,
+      this.state.size
+    );
   };
 
   handleCloseModalClick = () => {
@@ -421,6 +438,13 @@ export class ProductShow extends Component {
                   >
                     ADD
                   </button>
+                  <button
+                    onClick={this.handleBuyClick}
+                    className="w3-btn w3-black button w3-large"
+                    style={{ width: "30%", marginLeft: 5 }}
+                  >
+                    BUY
+                  </button>
                   <select
                     disabled={
                       data[0].product_sex === 5 || data[0].product_sex === 55
@@ -458,6 +482,13 @@ export class ProductShow extends Component {
             <div className="w3-text-gray" style={{ marginTop: "5%" }}>
               Pay what you see everything is included
             </div>
+          </div>
+          <div
+            className={`productAddedToCartModal w3-animate-down ${
+              !this.state.isProductAddedMessageVisible && "w3-hide"
+            }`}
+          >
+            Product is added to cart
           </div>
         </div>
       );

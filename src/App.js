@@ -184,14 +184,19 @@ export class App extends Component {
   };
 
   handleAddProductToCartClick = (product_id, size) => {
-    this.setState({
-      modal: true,
-      modalMessage: `${size} size item added to cart`,
-    });
     this.setState({ cart: [product_id, ...this.state.cart] });
     let tempCartDetails = [...this.state.cartWithSize];
     tempCartDetails.push({ product_id: product_id, size: size });
     this.setState({ cartWithSize: tempCartDetails });
+  };
+
+  handleBuyProductClick = (product_id, size) => {
+    this.setState({ cart: [product_id, ...this.state.cart] });
+    let tempCartDetails = [...this.state.cartWithSize];
+    tempCartDetails.push({ product_id: product_id, size: size });
+    this.setState({ cartWithSize: tempCartDetails }, () => {
+      this.setState({ productShow: false, activeSection: "Cart" });
+    });
   };
 
   handleSexUnderHomeClick = (sex) => {
@@ -334,6 +339,7 @@ export class App extends Component {
             productId={this.state.productShowId}
             productCloseClicked={this.handleProductCloseClick}
             addProductToCartClicked={this.handleAddProductToCartClick}
+            buyProductClicked={this.handleBuyProductClick}
           />
         )}
 
